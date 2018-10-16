@@ -33,3 +33,6 @@ Pasos para ejecutar correctamete la Aplicación web:
 El registro de usuario, envía a cambiar la contraseña después de confirmar el correo electrónico
 ya que me parece más segura la generación de contraseña de FOS que enviar una contraseña en texto
 plano por correo.
+
+La tabla temporal de creación de usuario no se usó con el fin de evitar redundancia de información,
+se puede controlar la activación con una sola tabla.

@@ -6,6 +6,9 @@
                 <th>Sucesos</th>
                 <th>Dpto - Ciudad</th>
                 <th>Pruebas</th>
+                {% if is_granted('ROLE_SUPER_ADMIN') %}
+                    <th>Cliente</th>
+                {% endif %}
             </tr>
         </thead>
         <tbody>
@@ -19,6 +22,9 @@
                     {% endfor %}
                     </ul>
                 </td>
+                {% if is_granted('ROLE_SUPER_ADMIN') %}
+                    <td>{{ creditInfo.userId.email }}</td>
+                {% endif %}
             </tr>
         {% endfor %}
         </tbody>

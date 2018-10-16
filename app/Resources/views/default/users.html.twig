@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="row text-center">
+        <h1>Usuarios</h1>
+    </div>
+    <div class="row">
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped">
+                <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Tipo Doc.</th>
+                    <th># Doc.</th>
+                    <th>Estado</th>
+                    <th>Teléfono</th>
+                    <th>Correo</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for user in users %}
+                    <tr>
+                        <td>{{ user.name }}</td>
+                        <td>{{ user.docTypeName }}</td>
+                        <td>{{ user.idNumber }}</td>
+                        <td>{{ user.enabled?'Activo':'Inactivo' }}</td>
+                        <td>{{ user.telephone }}</td>
+                        <td>{{ user.email }}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}
