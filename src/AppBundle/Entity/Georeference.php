@@ -58,6 +58,11 @@ class Georeference
         $this->hijos = new ArrayCollection();
     }
 
+    public function __toString()
+    {
+        return $this->getNombre();
+    }
+
     /**
      * @return int
      */

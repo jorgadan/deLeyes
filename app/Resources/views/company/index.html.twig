@@ -1,0 +1,24 @@
+
+<div class="table-responsive">
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Tipo</th>
+                <th># Accionistas</th>
+                <th>Capital</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for company in companies %}
+            <tr>
+                <td>{{ company.name }}</td>
+                <td>{{ company.type }}</td>
+                <td>{{ company.partners }}</td>
+                <td>{{ company.capital|number_format() }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+
