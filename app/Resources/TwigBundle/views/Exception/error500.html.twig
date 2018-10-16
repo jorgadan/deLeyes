@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+{%  block title %}
+    Oops!
+{% endblock %}
+{% block body -%}
+
+    <div class="panel panel-color panel-gray">
+        <div class="panel-heading">
+            <div class="panel-title">PÁGINA NO DISPONIBLE (500)</div>
+        </div>
+        <div class="panel-body">
+            <p>LO SENTIMOS! Estamos trabajando para encontrar una solución, por favor intente más tarde.</p>
+            <br>
+            <a href="{{ path('homepage') }}" class="btn-sm btn-primary">Volver</a>
+        </div>
+    </div>
+{% endblock %}

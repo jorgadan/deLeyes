@@ -1,0 +1,25 @@
+{% trans_default_domain 'FOSUserBundle' %}
+<div class="row">
+    <div class="col-sm-6">
+        {{ form_start(form, { 'action': path('fos_user_resetting_reset', {'token': token}), 'attr': { 'class': 'login-form' } }) }}
+        <div class="login-header">
+            <a href="#" class="logo">
+                <img src="{{ asset('favicon.ico') }}" alt="" width="200" />
+            </a>
+            <p>Estimado usuario, escribe una nueva contraseña!</p>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="fos_user_change_password_form_plainPassword_first">Nueva Contraseña</label>
+            {{ form_widget(form.plainPassword.first, {'attr' : { 'class' : 'form-control input-dark' }}) }}
+        </div>
+
+        <div class="form-group">
+            <label class="control-label" for="fos_user_change_password_form_plainPassword_second">Confirme Nueva Contraseña</label>
+            {{ form_widget(form.plainPassword.second, {'attr' : { 'class' : 'form-control input-dark' }}) }}
+        </div>
+    <div class="form-group">
+        <input class="btn btn-blue" type="submit" value="{{ 'resetting.reset.submit'|trans }}" />
+    </div>
+{{ form_end(form) }}
+    </div>
+</div>

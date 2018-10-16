@@ -1,0 +1,76 @@
+{% extends "@FOSUser/layout.html.twig" %}
+
+{% trans_default_domain 'FOSUserBundle' %}
+{% block title %}Login{% endblock %}
+{% block bodyClass %}login-page{% endblock %}
+{% block fos_user_content %}
+    <div class="row">
+        <div class="col-sm-6">
+            <script type="text/javascript">
+                $(document).ready(function($)
+                {
+                    // Reveal Login form
+                    setTimeout(function(){ $(".fade-in-effect").addClass('in'); }, 1);
+
+                    // Set Form focus
+                    $("form#login .form-group:has(.form-control):first .form-control").focus();
+                    {% if error %}
+                    var opts = {
+                        "closeButton": true,
+                        "debug": false,
+                        "positionClass": "toast-top-full-width",
+                        "onclick": null,
+                        "showDuration": "300",
+                        "hideDuration": "1000",
+                        "timeOut": "5000",
+                        "extendedTimeOut": "1000",
+                        "showEasing": "swing",
+                        "hideEasing": "linear",
+                        "showMethod": "fadeIn",
+                        "hideMethod": "fadeOut"
+                    };
+                    toastr.error("{{ error.messageKey|trans(error.messageData, 'security') }}", "Login Invalido!", opts);
+                    {% endif %}
+                });
+            </script>
+
+            <form action="{{ path("fos_user_security_check") }}" method="post" role="form" id="login" class="login-form fade-in-effect">
+
+                <div class="login-header">
+                    <a href="#" class="logo">
+                        <img src="{{ asset('favicon.ico') }}" alt="" width="200" />
+                    </a>
+
+                    <p>Estimado usuario, inicia sesión para acceder al sitio!</p>
+                </div>
+                <input type="hidden" name="_csrf_token" id="csrf" value="{{ csrf_token }}" />
+
+                <div class="form-group">
+                    <label class="control-label" for="username">{{ 'security.login.username'|trans }}</label>
+                    <input type="text" class="form-control input-dark" name="_username" id="username" autocomplete="off" />
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label" for="password">Password</label>
+                    <input type="password" class="form-control input-dark" id="password" name="_password" autocomplete="off" />
+                </div>
+
+                <div class="form-group">
+                    <button type="submit" id="_submit" name="_submit" class="btn btn-dark  btn-block text-left">
+                        <i class="fa-lock"></i>
+                        Iniciar Sesion
+                    </button>
+                </div>
+
+                <div class="login-footer">
+                    <a href="{{ path('fos_user_resetting_request') }}">Olvidaste tu Contraseña?</a>
+
+
+                </div>
+
+            </form>
+        </div>
+
+    </div>
+
+{% endblock fos_user_content %}

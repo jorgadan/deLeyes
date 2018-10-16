@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+{%  block title %}
+    Oops!
+{% endblock %}
+{% block body -%}
+
+    <div class="panel panel-color panel-danger">
+        <div class="panel-heading">
+            <div class="panel-title">¡ALGO NO ESTÁ BIEN!</div>
+        </div>
+        <div class="panel-body">
+            <p>LO SENTIMOS! Estamos trabajando para encontrar una solución, por favor intente más tarde.</p>
+            <br>
+            <a href="{{ path('homepage') }}" class="btn-sm btn-danger">Volver</a>
+        </div>
+    </div>
+{% endblock %}

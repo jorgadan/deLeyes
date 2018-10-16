@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+{%  block title %}
+    Oops!
+{% endblock %}
+{% block body -%}
+
+    <div class="panel panel-color panel-gray">
+        <div class="panel-heading">
+            <div class="panel-title">PÁGINA NO ENCONTRADA (404)</div>
+        </div>
+        <div class="panel-body">
+            <p>LO SENTIMOS! La página que solicitó no existe, si es incorrecto, contacte al administrador.</p>
+            <br>
+            <a href="{{ path('homepage') }}" class="btn-sm btn-primary">Volver</a>
+        </div>
+    </div>
+{% endblock %}

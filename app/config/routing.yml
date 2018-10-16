@@ -1,0 +1,21 @@
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation
+
+register:
+    path: /register/
+    defaults: { _controller: AppBundle:Registration:register }
+    methods: [GET, POST]
+
+registration_confirm:
+    path: /register/confirm/{token}
+    defaults: { _controller: AppBundle:Registration:confirm }
+    methods: [GET, POST]
+
+fos_user_resetting_reset:
+    path: /resetting/reset/{token}
+    defaults: { _controller: AppBundle:Resetting:reset }
+    methods: [GET, POST]
+
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
