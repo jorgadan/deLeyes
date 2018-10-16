@@ -9,5 +9,21 @@
         <input type="submit" value="Crear" class="btn btn-success pull-left"/>
     {{ form_end(form) }}
 
-    <a class="btn btn-warning pull-right" href="{{ path('company_index') }}"> Volver</a>
+    <a class="btn btn-warning pull-right" href="{{ path('homepage') }}"> Volver</a>
+{% endblock %}
+
+{% block javascripts %}
+    <script>
+        $(document).ready(function() {
+            // you may need to change this code if you are not using Bootstrap Datepicker
+            $('#appbundle_company_georeferenceId').attr('readonly', 'readonly');
+            $('#appbundle_company_department').on('change',function () {
+                $.post('{{ path('load_cities') }}',
+                    {'dpto':$(this).val()},
+                    function (success) {
+                        $('#appbundle_company_georeferenceId').html(success).attr('readonly', false);
+                    });
+            })
+        });
+    </script>
 {% endblock %}

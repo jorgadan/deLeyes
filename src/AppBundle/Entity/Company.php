@@ -120,6 +120,25 @@ class Company
         return $this->type;
     }
 
+    public function getTypeName()
+    {
+        switch ($this->type){
+            case 1:
+                $tipe = 'SAS';
+                break;
+            case 2:
+                $tipe = 'SA';
+                break;
+            case 3:
+                $tipe = 'LTDA';
+                break;
+            default:
+                $tipe = '';
+                break;
+        }
+        return $tipe;
+    }
+
     /**
      * Set partners
      *

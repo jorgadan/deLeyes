@@ -7,15 +7,17 @@
                 <th>Tipo</th>
                 <th># Accionistas</th>
                 <th>Capital</th>
+                <th>Dpto - Ciudad</th>
             </tr>
         </thead>
         <tbody>
         {% for company in companies %}
             <tr>
                 <td>{{ company.name }}</td>
-                <td>{{ company.type }}</td>
+                <td>{{ company.typeName }}</td>
                 <td>{{ company.partners }}</td>
                 <td>{{ company.capital|number_format() }}</td>
+                <td>{{ company.georeferenceId.padreId }} - {{ company.georeferenceId }}</td>
             </tr>
         {% endfor %}
         </tbody>

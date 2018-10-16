@@ -6,7 +6,7 @@
             <a href="{{ path('company_new') }}" class="btn btn-default"><i class="glyphicon glyphicon-briefcase"></i> Creación de Empresa</a>
         </div>
         <div class="col-md-6">
-            <a class="btn btn-default"><i class="glyphicon glyphicon-list-alt"></i> Data Crédito</a>
+            <a href="{{ path('creditinfo_new') }}" class="btn btn-default"><i class="glyphicon glyphicon-list-alt"></i> Data Crédito</a>
         </div>
     </div>
     <div class="row text-center">
@@ -17,7 +17,7 @@
             {% include 'company/index.html.twig' %}
         </div>
         <div class="col-md-6">
-
+            {% include 'creditinfo/index.html.twig' %}
         </div>
     </div>
 {% endblock %}

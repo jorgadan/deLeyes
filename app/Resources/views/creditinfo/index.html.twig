@@ -1,0 +1,26 @@
+
+<div class="table-responsive">
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Sucesos</th>
+                <th>Dpto - Ciudad</th>
+                <th>Pruebas</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for creditInfo in credits %}
+            <tr>
+                <td>{% if creditInfo.date %}{{ creditInfo.date|date('Y-m-d') }}{% else %} -- {% endif %} - {{ creditInfo.description }}</td>
+                <td>{{ creditInfo.georeferenceId.padreId }} - {{ creditInfo.georeferenceId }}</td>
+                <td><ul>
+                    {% for doc in creditInfo.files %}
+                        <li><a href="{{ asset(doc.path) }}" target="_blank">{{ doc.name }}</a></li>
+                    {% endfor %}
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
