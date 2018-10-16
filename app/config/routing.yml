@@ -12,7 +12,7 @@ registration_confirm:
     defaults: { _controller: AppBundle:Registration:confirm }
     methods: [GET, POST]
 
-fos_user_resetting_reset:
+resetting_reset:
     path: /resetting/reset/{token}
     defaults: { _controller: AppBundle:Resetting:reset }
     methods: [GET, POST]

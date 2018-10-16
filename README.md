@@ -8,9 +8,9 @@ Instalación
 
 Pasos para ejecutar correctamete la Aplicación web:
 
-  * git clone https://github.com/jorgadan/deLeyes.git
+  * git clone https://github.com/jorgadan/deleyes.git
 
-  * cd deLeyes
+  * cd deleyes
 
   * composer install
 
